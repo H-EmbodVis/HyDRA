@@ -38,22 +38,22 @@ Video world models have shown immense potential in simulating the physical world
 
 ### 🎥 Generation Results
 
-More generation results can be found on our [project homepage](https://kj-chen666.github.io/Hybrid-Memory-in-Video-World-Models/).
+More results can be found on our [project homepage](https://kj-chen666.github.io/Hybrid-Memory-in-Video-World-Models/).
 
 <div align="center">
-  <img src="assets/genetation_videos/1.mp4" width="32%" />
-  <img src="assets/genetation_videos/2.mp4" width="32%" />
-  <img src="assets/genetation_videos/3.mp4" width="32%" />
+  <img src="assets/genetation_videos/1.gif" width="32%" />
+  <img src="assets/genetation_videos/2.gif" width="32%" />
+  <img src="assets/genetation_videos/3.gif" width="32%" />
 </div>
 <div align="center">
-  <img src="assets/genetation_videos/4.mp4" width="32%" />
-  <img src="assets/genetation_videos/5.mp4" width="32%" />
-  <img src="assets/genetation_videos/6.mp4" width="32%" />
+  <img src="assets/genetation_videos/4.gif" width="32%" />
+  <img src="assets/genetation_videos/5.gif" width="32%" />
+  <img src="assets/genetation_videos/6.gif" width="32%" />
 </div>
 
 
 ## 📅 TODO
-* [x] Release the paper
+* [ ] Release the paper
 * [ ] Release HM-World dataset
 * [ ] Release HyDRA checkpoints and inference code
 * [ ] Release HyDRA training code

@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it using the metadata from this file."
+title: "Out of Sight but Not Out of Mind: Hybrid Memory for Dynamic Video World Models"
+type: software
+authors:
+  - family-names: Chen
+    given-names: Kaijin
+  - family-names: Liang
+    given-names: Dingkang
+  - family-names: Zhou
+    given-names: Xin
+  - family-names: Ding
+    given-names: Yikang
+  - family-names: Liu
+    given-names: Xiaoqiang
+  - family-names: Wan
+    given-names: Pengfei
+  - family-names: Bai
+    given-names: Xiang
+repository-code: "https://github.com/<YOUR_GITHUB_USERNAME>/<REPO_NAME>"
+url: "https://<YOUR_GITHUB_USERNAME>.github.io/<REPO_NAME>/"
+license: "NONE"
+preferred-citation:
+  type: article
+  title: "Out of Sight but Not Out of Mind: Hybrid Memory for Dynamic Video World Models"
+  authors:
+    - family-names: Chen
+      given-names: Kaijin
+    - family-names: Liang
+      given-names: Dingkang
+    - family-names: Zhou
+      given-names: Xin
+    - family-names: Ding
+      given-names: Yikang
+    - family-names: Liu
+      given-names: Xiaoqiang
+    - family-names: Wan
+      given-names: Pengfei
+    - family-names: Bai
+      given-names: Xiang
+  year: 2026
+  journal: "arXiv"
+  url: "https://arxiv.org/abs/XXXX.XXXXX"

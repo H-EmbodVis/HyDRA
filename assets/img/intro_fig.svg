@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+  <defs>
+    <linearGradient id="g" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#7aa2ff" stop-opacity="0.26"/>
+      <stop offset="1" stop-color="#6ee7ff" stop-opacity="0.14"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" fill="#0f1526"/>
+  <rect x="70" y="70" width="1460" height="760" rx="28" fill="url(#g)" stroke="rgba(255,255,255,0.14)" stroke-width="2"/>
+  <g font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" text-anchor="middle">
+    <text x="800" y="360" font-size="54" font-weight="700" fill="rgba(255,255,255,0.92)">Intro Figure Placeholder</text>
+    <text x="800" y="428" font-size="20" fill="rgba(255,255,255,0.70)">Replace with your paper’s intro/teaser (e.g., figures/intro.pdf)</text>
+    <text x="800" y="490" font-size="18" fill="rgba(255,255,255,0.60)">File: assets/img/intro_fig.svg</text>
+  </g>
+  <g fill="rgba(255,255,255,0.16)">
+    <circle cx="220" cy="160" r="44"/>
+    <circle cx="1400" cy="730" r="62"/>
+  </g>
+</svg>
+

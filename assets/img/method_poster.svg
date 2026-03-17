@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1280" height="720" viewBox="0 0 1280 720">
+  <rect width="1280" height="720" fill="#0f1526"/>
+  <rect x="70" y="70" width="1140" height="580" rx="24" fill="rgba(255,255,255,0.06)" stroke="rgba(255,255,255,0.14)" stroke-width="2"/>
+  <g fill="rgba(255,255,255,0.85)" font-family="ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial" text-anchor="middle">
+    <text x="640" y="348" font-size="44" font-weight="700">Method Video</text>
+    <text x="640" y="404" font-size="18" fill="rgba(255,255,255,0.65)">poster: assets/img/method_poster.svg</text>
+  </g>
+</svg>
+

@@ -59,6 +59,61 @@ More results can be found on our [project homepage](https://kj-chen666.github.io
 * [ ] Release HyDRA training code
 
 
+## 🛠️ Installation
+
+### Step 1: Clone this repository
+
+```bash
+git clone https://github.com/H-EmbodVis/VEGA-3D.git
+cd HyDRA
+```
+
+> If your cloned folder name is not `HyDRA`, please `cd` into the actual folder.
+
+### Step 2: Create & activate an Anaconda environment
+
+```bash
+conda create -n hydra python=3.10 -y
+conda activate hydra
+```
+
+### Step 3: Install required packages
+
+```bash
+pip install -r requirements.txt
+```
+
+### Step 4: Download the pretrained Wan2.1 (1.3B) T2V model
+
+- Model link: https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B
+- Recommended location: `./ckpts`
+
+Example directory structure (recommended):
+
+```text
+HyDRA/
+└── ckpts/
+    ├── Wan2.1_VAE.pth
+    ├── diffusion_pytorch_model.safetensors
+    ├── models_t5_umt5-xxl-enc-bf16.pth
+    └── ... (other files)
+```
+
+### Step 5: Download the trained HyDRA weights
+
+- Checkpoint link:
+- Recommended location: `./ckpts` (e.g., `./ckpts/hydra.pth`)
+
+
+## 🚀 Inference
+
+Run inference on the example data:
+
+```bash
+python infer_hydra.py
+```
+
+
 ## 👍 Acknowledgement
 
 Thanks for the following related works and open source reposities:

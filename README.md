@@ -74,7 +74,7 @@ More results can be found on our [project homepage](https://kj-chen666.github.io
 ### Step 1: Clone this repository
 
 ```bash
-git clone https://github.com/H-EmbodVis/VEGA-3D.git
+git clone https://github.com/H-EmbodVis/HyDRA.git
 cd HyDRA
 ```
 

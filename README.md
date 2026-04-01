@@ -93,6 +93,35 @@ conda activate hydra
 pip install -r requirements.txt
 ```
 
+<details>
+<summary><b>AMD ROCm GPU support (optional)</b></summary>
+
+HyDRA works on AMD GPUs via ROCm. Replace Step 3 with:
+
+```bash
+# Install ROCm PyTorch (ROCm 6.4 example)
+pip install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/rocm6.4
+
+# Install remaining deps (skip torch/cupy)
+grep -vEi "^(torch|torchvision|cupy)" requirements.txt > /tmp/req_clean.txt
+pip install -r /tmp/req_clean.txt
+
+# (Recommended) Install FlashAttention for ~16-19% faster inference
+# Option A — source build with Triton backend (ROCm 6.x):
+git clone https://github.com/Dao-AILab/flash-attention.git /tmp/flash-attention
+cd /tmp/flash-attention && git submodule update --init third_party/aiter
+FLASH_ATTENTION_TRITON_AMD_ENABLE=TRUE python setup.py install
+
+# Option B — AMD AITER for best performance on ROCm 7.x:
+#   pip install aiter  (or build from https://github.com/ROCm/aiter)
+#   AITER auto-dispatches to CK kernels on ROCm 7.x (~25% faster than Triton)
+```
+
+The attention backend is selected automatically at import time:
+FA3 → AITER → FA2 → SageAttention → PyTorch SDPA (fallback).
+
+</details>
+
 ### Step 4: Download the pretrained Wan2.1 (1.3B) T2V model
 
 - Model link: https://huggingface.co/Wan-AI/Wan2.1-T2V-1.3B

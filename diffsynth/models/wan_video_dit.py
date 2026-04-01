@@ -1,3 +1,4 @@
+import logging
 import torch
 import torch.nn as nn
 import torch.nn.functional as F
@@ -5,24 +6,43 @@ import math
 from typing import Tuple, Optional
 from einops import rearrange
 from .utils import hash_state_dict_keys
-# from .ucpe_attention import UcpeSelfAttention
+
+logger = logging.getLogger(__name__)
+
 try:
     import flash_attn_interface
     FLASH_ATTN_3_AVAILABLE = True
-except ModuleNotFoundError:
+except (ImportError, ModuleNotFoundError):
     FLASH_ATTN_3_AVAILABLE = False
 
 try:
     import flash_attn
     FLASH_ATTN_2_AVAILABLE = True
-except ModuleNotFoundError:
+except (ImportError, ModuleNotFoundError):
     FLASH_ATTN_2_AVAILABLE = False
 
 try:
+    import importlib as _il
+    _aiter_mha = _il.import_module("aiter.ops.mha")
+    _aiter_flash_attn_func = _aiter_mha.flash_attn_func
+    AITER_AVAILABLE = True
+except Exception:
+    AITER_AVAILABLE = False
+
+try:
     from sageattention import sageattn
-    SAGE_ATTN_AVAILABLE = True 
-except ModuleNotFoundError:
+    SAGE_ATTN_AVAILABLE = True
+except (ImportError, ModuleNotFoundError):
     SAGE_ATTN_AVAILABLE = False
+
+_ATTN_BACKEND = (
+    "flash_attn_3" if FLASH_ATTN_3_AVAILABLE else
+    "aiter" if AITER_AVAILABLE else
+    "flash_attn_2" if FLASH_ATTN_2_AVAILABLE else
+    "sage_attn" if SAGE_ATTN_AVAILABLE else
+    "sdpa"
+)
+logger.info("Attention backend: %s", _ATTN_BACKEND)
     
 def flash_attention(q: torch.Tensor, k: torch.Tensor, v: torch.Tensor, num_heads: int, compatibility_mode=False):
     if compatibility_mode:
@@ -36,6 +56,12 @@ def flash_attention(q: torch.Tensor, k: torch.Tensor, v: torch.Tensor, num_heads
         k = rearrange(k, "b s (n d) -> b s n d", n=num_heads)
         v = rearrange(v, "b s (n d) -> b s n d", n=num_heads)
         x = flash_attn_interface.flash_attn_func(q, k, v)
+        x = rearrange(x, "b s n d -> b s (n d)", n=num_heads)
+    elif AITER_AVAILABLE:
+        q = rearrange(q, "b s (n d) -> b s n d", n=num_heads)
+        k = rearrange(k, "b s (n d) -> b s n d", n=num_heads)
+        v = rearrange(v, "b s (n d) -> b s n d", n=num_heads)
+        x = _aiter_flash_attn_func(q, k, v)
         x = rearrange(x, "b s n d -> b s (n d)", n=num_heads)
     elif FLASH_ATTN_2_AVAILABLE:
         q = rearrange(q, "b s (n d) -> b s n d", n=num_heads)

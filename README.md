@@ -18,7 +18,7 @@
   Kaijin Chen<sup>1</sup>,
   <a href="https://dk-liang.github.io/">Dingkang Liang</a><sup>1</sup>,
   <a href="https://lmd0311.github.io/">Xin Zhou</a><sup>1</sup>,
-  <a href="hhttps://yikang98.github.io/">Yikang Ding</a><sup>1</sup>,
+  <a href="https://yikang98.github.io/">Yikang Ding</a><sup>1</sup>,
   Xiaoqiang Liu<sup>2</sup>,
   Pengfei Wan<sup>2</sup>,
   <a href="https://scholar.google.com/citations?user=UeltiQ4AAAAJ&hl=en">Xiang Bai</a><sup>1</sup>

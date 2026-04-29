@@ -16,12 +16,12 @@
 
 <p align="center">
   Kaijin Chen<sup>1</sup>,
-  Dingkang Liang<sup>1</sup>,
-  Xin Zhou<sup>1</sup>,
-  Yikang Ding<sup>2</sup>,
+  <a href="https://dk-liang.github.io/">Dingkang Liang</a><sup>1</sup>,
+  <a href="https://lmd0311.github.io/">Xin Zhou</a><sup>1</sup>,
+  <a href="hhttps://yikang98.github.io/">Yikang Ding</a><sup>1</sup>,
   Xiaoqiang Liu<sup>2</sup>,
   Pengfei Wan<sup>2</sup>,
-  Xiang Bai<sup>1</sup>
+  <a href="https://scholar.google.com/citations?user=UeltiQ4AAAAJ&hl=en">Xiang Bai</a><sup>1</sup>
 </p>
 
 <p align="center">
@@ -102,6 +102,12 @@ More visual results are available on the [project homepage](https://kj-chen666.g
   <img src="./assets/genetation_videos/7.gif" width="32%" alt="Generation result 7">
   <img src="./assets/genetation_videos/8.gif" width="32%" alt="Generation result 8">
   <img src="./assets/genetation_videos/9.gif" width="32%" alt="Generation result 9">
+</div>
+
+## Experimental Results
+
+<div align="center">
+  <img src="./assets/table.png" width="100%" alt="HyDRA quantitative results table">
 </div>
 
 ## News and Roadmap

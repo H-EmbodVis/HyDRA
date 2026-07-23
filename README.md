@@ -160,7 +160,7 @@ HyDRA/
 |- infer_hydra.py
 |- train_hydra.py
 |- requirements.txt
-```
+``` 
 
 ### 4. Download the HyDRA checkpoint
 
@@ -234,6 +234,23 @@ We release **HM-World**, a large-scale dataset tailored for hybrid memory resear
 - Designed for: exit-entry events, dynamic continuity, and long-horizon memory evaluation
 
 If you use HM-World in your work, please cite the paper below.
+
+## Evaluation
+
+We provide `eval_dsc.py`, a reference implementation of **Dynamic Subject Consistency (DSC)**. 
+
+Run the evaluation with:
+
+```bash
+python eval_dsc.py \
+  --context_video ./path/to/context.mp4 \
+  --target_video ./path/to/target.mp4 \
+  --pred_video ./outputs/pred.mp4 \
+  --dynamic_mask ./path/to/M_CustomDepth.mp4 \
+  --device cuda
+```
+
+The input `dynamic_mask` video is provided in HM-World Dataset. The reference parser assumes that the subject region is marked in red and uses it to obtain `context_boxes` and `target_boxes`. Importantly, `pred_boxes` are obtained by tracking the target object across `pred_frames` using YOLOv11.
 
 ## Acknowledgement
 
